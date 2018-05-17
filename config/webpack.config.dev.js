@@ -30,7 +30,7 @@ const htmlPluginsAray = paths.htmlArray.map((v)=> {
   entryObj[fileParse.name] = [
     require.resolve('./polyfills'),
     require.resolve('react-dev-utils/webpackHotDevClient'),
-    paths.appSrc + `/${fileParse.name}.js`,
+    `${paths.appSrc}/${fileParse.name}.js`,
   ]
   return new HtmlWebpackPlugin({
     inject: true,

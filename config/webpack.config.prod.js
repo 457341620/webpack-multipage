@@ -44,7 +44,7 @@ const htmlPluginsAray = paths.htmlArray.map((v)=> {
   
   entryObj[fileParse.name] = [
     require.resolve('./polyfills'),
-    paths.appSrc + `/${fileParse.name}.js`,
+    `${paths.appSrc}/${fileParse.name}.js`,
   ];
   console.log(v);
   return new HtmlWebpackPlugin({
