@@ -35,7 +35,7 @@ if (env.stringified['process.env'].NODE_ENV !== '"production"') {
 }
 
 // Note: defined here because it will be used more than once.
-const cssFilename = 'static/css/[name].[contenthash:8].css';
+const cssFilename = 'static/css/[name].css';
 
 // 遍历html
 const entryObj = {};
@@ -46,7 +46,6 @@ const htmlPluginsAray = paths.htmlArray.map((v)=> {
     require.resolve('./polyfills'),
     `${paths.appSrc}/${fileParse.name}.js`,
   ];
-  console.log(v);
   return new HtmlWebpackPlugin({
     inject: true,
     chunks:[fileParse.name],
@@ -81,8 +80,8 @@ module.exports = {
     // Generated JS file names (with nested folders).
     // There will be one main bundle, and one file per asynchronous chunk.
     // We don't currently advertise code splitting but Webpack supports it.
-    filename: 'static/js/[name].[chunkhash:8].js',
-    chunkFilename: 'static/js/[name].[chunkhash:8].chunk.js',
+    filename: 'static/js/[name].js',
+    chunkFilename: 'static/js/[name].chunk.js',
     // We inferred the "public path" (such as / or /my-project) from homepage.
     publicPath: publicPath,
     // Point sourcemap entries to original disk location (format as URL on Windows)
